@@ -24,9 +24,13 @@
 	//
 	echo "Finished parser";
 	$app->setID($argParser->getApplicationID()); //
+	echo "Finished ID";
 	$app->setBudget($argParser->getBudget()); //
+	echo "Finished Budget";
 	$app->setBuckets($argParser->getBuckets()); // May have to generate ourselves if not provided
+	echo "Finished Buckets";
 	$app->setPModel($argParser->getPModel()); // example_app_measurement.csv
+	echo "Finished PModel";
 	$app->setStatus(STATUS_INIT);
 	echo "Finished app setting";
 	$fileParser->addApplication($app);
