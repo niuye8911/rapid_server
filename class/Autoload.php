@@ -5,7 +5,7 @@
 	 * Joseph A. Boyle (joseph.a.boyle@rutgers.edu)
 	 * Rutgers, The State University of New Jersey
 	 * November 9, 2018
-	 */ 
+	 */
 
 	require_once("App.php");
 	require_once("FileParser.php");
@@ -18,7 +18,7 @@
 	 *  2: Verbose
 	 * 	3: All
 	 */
-	define("DEBUG", 0);
+	define("DEBUG", 3);
 
 	function dbg($level, $msg){
 		if(DEBUG < $level) return;
