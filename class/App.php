@@ -12,6 +12,7 @@
 	define("STATUS_STARTING", 1);
 	define("STATUS_RUNNING", 2);
 	define("STATUS_ENDED", 4);
+	define("SCRIPT", '/home/liuliu/Research/rapidBackend/rapid_m_backend_server/RapidMain.py')
 
 	class App{
 		private $id;
@@ -20,7 +21,6 @@
 		private $p_model;
 		private $status;
 		private $appDirExists;
-		const SCRIPT = '/home/liuliu/Research/rapidBackend/rapid_m_backend_server/RapidMain.py'
 
 		function __construct(){
 			$this->id 			= 0;
@@ -51,7 +51,7 @@
 				// Now that we have our profile in place, we can generate a real profile.
 
 
-				$command = 'python3 /home/liuliu/Research/rapidBackend/rapid_m_backend_server/RapidMain.py --flow INIT --path2app ' . $profileURL . ' --apppfs ' . $bucketsURL . ' --appdata ' . $pmodelURL . ' --dir ' . $this->getDirectory($machineID);
+				$command = 'python3 '.SCRIPT.' --flow INIT --path2app ' . $profileURL . ' --apppfs ' . $bucketsURL . ' --appdata ' . $pmodelURL . ' --dir ' . $this->getDirectory($machineID);
 
 				// god speed
 				$result = exec($command, $output);
