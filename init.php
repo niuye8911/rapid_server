@@ -22,8 +22,9 @@
 		// 1) raw data for all config system profile clustering
 		// 2) raw data for perf. model training
 	//
-
+	echo "initingapp";
 	$app = App();
+	echo "Finishe app";
 	$app->setID($argParser->getApplicationID()); //
 	echo "Finished ID";
 	$app->setBudget($argParser->getBudget()); //
