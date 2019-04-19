@@ -74,7 +74,7 @@
 			$dirName = '/var/www/html/rapid_server/storage' . '/apps/' . $machineID . '-' . $this->id;
 
 			// Avoid pointlessly rechecking the dir every time by only checking once per app load.
-			if($this->appDirExists == false && !file_exists($dirName){
+			if($this->appDirExists == false && !file_exists($dirName)){
 				$oldmask = umask(0);
 				mkdir($dirName, 0777, true);
 				umask($oldmask);
