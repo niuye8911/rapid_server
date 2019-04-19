@@ -23,12 +23,14 @@
 		private $appDirExists;
 
 		function __construct(){
+			echo "init";
 			$this->id 			= 0;
 			$this->budget 		= NULL;
 			$this->buckets 		= NULL;
 			$this->p_model 		= NULL;
 			$this->status 		= STATUS_NONE;
 			$this->appDirExists = false;
+			echo "finished";
 		}
 
 		public function saveToDisk($machineID){
