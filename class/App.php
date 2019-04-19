@@ -55,7 +55,7 @@
 				// god speed
 				$result = exec($command, $output);
 
-				dbg(3, $result);
+				dbg(3, $output);
 			}
 		}
 
