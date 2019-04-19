@@ -28,10 +28,10 @@
 	$app->setBuckets($argParser->getBuckets()); // May have to generate ourselves if not provided
 	$app->setPModel($argParser->getPModel()); // example_app_measurement.csv
 	$app->setStatus(STATUS_INIT);
-
+	echo "Finished app setting";
 	$fileParser->addApplication($app);
-
+	echo "finished add application";
 
 	$fileParser->saveToDisk();
-	echo "finishedlalalal"
+	echo "finished saving to disk";
 ?>
