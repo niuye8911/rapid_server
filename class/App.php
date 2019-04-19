@@ -12,9 +12,11 @@
 	define("STATUS_STARTING", 1);
 	define("STATUS_RUNNING", 2);
 	define("STATUS_ENDED", 4);
-	define('SCRIPT', "/home/liuliu/Research/rapidBackend/rapid_m_backend_server/RapidMain.py")
 
 	class App{
+
+		const SCRIPT = "/home/liuliu/Research/rapidBackend/rapid_m_backend_server/RapidMain.py";
+
 		private $id;
 		private $budget;
 		private $buckets;
@@ -51,7 +53,7 @@
 				// Now that we have our profile in place, we can generate a real profile.
 
 
-				$command = 'python3 '.SCRIPT.' --flow INIT --path2app ' . $profileURL . ' --apppfs ' . $bucketsURL . ' --appdata ' . $pmodelURL . ' --dir ' . $this->getDirectory($machineID);
+				$command = 'python3 '.self::SCRIPT.' --flow INIT --path2app ' . $profileURL . ' --apppfs ' . $bucketsURL . ' --appdata ' . $pmodelURL . ' --dir ' . $this->getDirectory($machineID);
 
 				// god speed
 				$result = exec($command, $output);
