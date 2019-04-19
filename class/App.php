@@ -51,7 +51,7 @@
 				// Now that we have our profile in place, we can generate a real profile.
 
 				$command = 'python3 /home/liuliu/Research/rapidBackend/rapid_m_backend_server/RapidMain.py' . ' --flow INIT --path2app ' . $profileURL . ' --apppfs ' . $bucketsURL . ' --appdata ' . $pmodelURL . ' --dir ' . $this->getDirectory($machineID);
-				echo $command;
+
 				// god speed
 				$result = exec($command, $output);
 
@@ -70,7 +70,8 @@
 		}
 
 		public function getDirectory($machineID){
-			$dirName = '/var/www/html/rapid_server/storage' . '/apps/' . $machineID);
+			echo "gettign here";
+			$dirName = '/var/www/html/rapid_server/storage' . '/apps/' . $machineID . '-' . $this->id;
 
 			// Avoid pointlessly rechecking the dir every time by only checking once per app load.
 			if($this->appDirExists == false && !file_exists($dirName)) mkdir($dirName, 0777, true);
