@@ -23,7 +23,6 @@
 		private $appDirExists;
 
 		function __construct(){
-			echo "hello"
 			$this->id 			= 0;
 			$this->budget 		= NULL;
 			$this->buckets 		= NULL;

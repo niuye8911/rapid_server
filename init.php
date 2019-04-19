@@ -23,7 +23,7 @@
 		// 2) raw data for perf. model training
 	//
 
-	$app = App()
+	$app = App();
 	$app->setID($argParser->getApplicationID()); //
 	echo "Finished ID";
 	$app->setBudget($argParser->getBudget()); //
