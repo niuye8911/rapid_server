@@ -9,7 +9,7 @@
 
 
 	require_once("class/Autoload.php");
-  echo "finished";
+
 	$argParser 	= new ArgumentParser();
 
 	$machineID 	= $argParser->getMachineID();
@@ -22,7 +22,7 @@
 		// 1) raw data for all config system profile clustering
 		// 2) raw data for perf. model training
 	//
-	echo "finished";
+
 	$app->setID($argParser->getApplicationID()); //
 	$app->setBudget($argParser->getBudget()); //
 	$app->setBuckets($argParser->getBuckets()); // May have to generate ourselves if not provided
@@ -33,5 +33,5 @@
 
 
 	$fileParser->saveToDisk();
-
+	echo "finishedlalalal"
 ?>
