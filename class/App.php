@@ -12,7 +12,7 @@
 	define("STATUS_STARTING", 1);
 	define("STATUS_RUNNING", 2);
 	define("STATUS_ENDED", 4);
-	define("SCRIPT", '/home/liuliu/Research/rapidBackend/rapid_m_backend_server/RapidMain.py')
+	define("SCRIPT", "/home/liuliu/Research/rapidBackend/rapid_m_backend_server/RapidMain.py")
 
 	class App{
 		private $id;
