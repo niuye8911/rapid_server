@@ -70,7 +70,7 @@
 		}
 
 		public function getDirectory($machineID){
-			$dirName = '/var/www/html/server/storage' . '/apps/' . hash('sha256', $machineID . '-' . $this->id);
+			$dirName = '/var/www/html/rapid_server/storage' . '/apps/' . hash('sha256', $machineID . '-' . $this->id);
 
 			// Avoid pointlessly rechecking the dir every time by only checking once per app load.
 			if($this->appDirExists == false && !file_exists($dirName)) mkdir($dirName, 0777, true);
