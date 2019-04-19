@@ -9,10 +9,9 @@
 
 
 	require_once("class/Autoload.php");
-
+  echo "finished";
 	$argParser 	= new ArgumentParser();
 
-	echo "finished";
 	$machineID 	= $argParser->getMachineID();
 	$appID		= $argParser->getApplicationID();
 
