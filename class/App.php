@@ -54,6 +54,7 @@
 				echo $command;
 				// god speed
 				$result = exec($command, $output);
+				echo $result;
 
 			}
 		}
