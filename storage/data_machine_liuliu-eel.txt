@@ -1,0 +1,1 @@
+{"applications":[{"id":"facedetect","budget":0,"dir":"\/var\/www\/html\/rapid_server\/storage\/apps\/liuliu-eel-facedetect","status":0}],"lastload":1555697447,"compute":null}
