@@ -1,22 +1,24 @@
 <?php
 
 	/*
-	 * This file is the Argument Parser. 
+	 * This file is the Argument Parser.
 	 * This file will handle loading in all parameters given by the user and processing them as needed.
 	 * Joseph A. Boyle (joseph.a.boyle@rutgers.edu)
 	 * Rutgers, The State University of New Jersey
 	 * November 9, 2018
-	 */ 
+	 */
 
 	define("KEY_MACHINE", 	"machine");
 	define("KEY_APP", 		"app");
 	define("KEY_BUCKETS", 	"buckets");
 	define("KEY_BUDGET", 	"budget");
 	define("KEY_PMODEL", 	"p_model");
+	define("KEY_COST", "cost");
+	define("KEY_MV", "mv");
 
 	class ArgumentParser{
 
-		private $machineID 		= NULL;	// The ID of the machine we are using, used to find the file.	
+		private $machineID 		= NULL;	// The ID of the machine we are using, used to find the file.
 		private $applicationID 	= NULL;	// The ID of the application we are targeting.
 		private $buckets		= NULL;
 		private $p_model		= NULL;
@@ -57,6 +59,20 @@
 				$this->p_model = $this->postGet(KEY_PMODEL, array());
 			}
 			return $this->p_model;
+		}
+
+		public function getMV(){
+			if($this->mv_file == NULL){
+				$this->mv_file = $this->postGet(KEY_MV, array());
+			}
+			return $this->mv_file;
+		}
+
+		public function getCost(){
+			if($this->cost_file == NULL){
+				$this->cost_file = $this->postGet(KEY_COST, array());
+			}
+			return $this->cost_file;
 		}
 
 		public function getBuckets(){

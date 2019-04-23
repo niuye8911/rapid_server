@@ -27,6 +27,8 @@
 			$this->budget 		= NULL;
 			$this->buckets 		= NULL;
 			$this->p_model 		= NULL;
+			$this->cost_file  = NULL;
+			$this->mv_file		= NULL;
 			$this->status 		= STATUS_NONE;
 			$this->appDirExists = false;
 		}
@@ -42,6 +44,18 @@
 			if($this->buckets !== null){
 				file_put_contents($bucketsURL, $this->buckets);
 				chmod($bucketsURL, 0666);
+			}
+
+			$costURL = $this->getDirectory($machineID) . '/cost.csv';
+			if($this->cost_file !== null){
+				file_put_contents($costURL, $this->cost_file);
+				chmod($costURL, 0666);
+			}
+
+			$mvURL = $this->getDirectory($machineID) . '/mv.csv';
+			if($this->mv_file !== null){
+				file_put_contents($mvURL, $this->mv_file);
+				chmod($mvURL, 0666);
 			}
 
 			$profileURL = $this->getDirectory($machineID) . '/profile.json';
@@ -105,6 +119,14 @@
 		public function setPModel($p_model){ $this->p_model = $p_model; }
 
 		public function getPModel(){ return $this->p_model; }
+
+		public function setCost($cost){ $this->cost_file = $cost; }
+
+		public function getCost(){ return $this->cost_file; }
+
+		public function setMV($mv){ $this->mv_file = $mv; }
+
+		public function getMV(){ return $this->mv_file; }
 
 		public function setStatus($status){ $this->status = $status; }
 
