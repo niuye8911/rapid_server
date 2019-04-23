@@ -98,7 +98,7 @@
 			$data["lastload"] 	= time();
 			$data["compute"] 	= $this->currentCompute;
 
-			return json_encode($data);
+			return json_encode($data, JSON_PRETTY_PRINT);
 		}
 
 		public function saveToDisk(){
