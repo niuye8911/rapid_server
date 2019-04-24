@@ -1,0 +1,46 @@
+{
+  "name": "swaptions",
+  "machine_id": "liuliu-eel",
+  "overwrite": true,
+  "model_params": {
+    "swaptions1": {
+      "mse": 0.07227530366245617,
+      "model_type": "linear",
+      "file": "/var/www/html/rapid_server/storage/apps/liuliu-eel-swaptions/swaptions1.pkl",
+      "poly": false,
+      "r2": 0.786967539072952,
+      "mae": 0.05555625793838093,
+      "diff": 0.046350591066998854,
+      "feature": [
+        "AFREQ",
+        "EXEC",
+        "FREQ",
+        "INST",
+        "INSTnom",
+        "IPC",
+        "L2HIT",
+        "L2MPI",
+        "PhysIPC%",
+        "MEM"
+      ]
+    }
+  },
+  "model_type": "LINEAR",
+  "CLUSTERED": true,
+  "TRAINED": true,
+  "cluster_info": {
+    "swaptions1": [
+      "num-400000",
+      "num-200000",
+      "num-800000",
+      "num-100000",
+      "num-600000",
+      "num-900000",
+      "num-300000",
+      "num-700000",
+      "num-500000",
+      "num-1000000"
+    ]
+  },
+  "num_of_cluster": 1
+}
