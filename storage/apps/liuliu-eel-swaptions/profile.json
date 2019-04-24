@@ -1,16 +1,13 @@
 {
   "name": "swaptions",
-  "machine_id": "liuliu-eel",
-  "overwrite": true,
+  "num_of_cluster": 1,
   "model_params": {
     "swaptions1": {
-      "mse": 0.07227530366245617,
+      "diff": 0.046350591066998854,
+      "r2": 0.786967539072952,
       "model_type": "linear",
       "file": "/var/www/html/rapid_server/storage/apps/liuliu-eel-swaptions/swaptions1.pkl",
-      "poly": false,
-      "r2": 0.786967539072952,
       "mae": 0.05555625793838093,
-      "diff": 0.046350591066998854,
       "feature": [
         "AFREQ",
         "EXEC",
@@ -22,25 +19,51 @@
         "L2MPI",
         "PhysIPC%",
         "MEM"
+      ],
+      "poly": false,
+      "mse": 0.07227530366245617
+    }
+  },
+  "TRAINED": true,
+  "model_type": "LINEAR",
+  "overwrite": true,
+  "cluster_info": {
+    "swaptions1": {
+      "env": {
+        "L2HIT": 0.94454479598,
+        "ACYC": 2326.47635582,
+        "INST": 5772.73307741,
+        "WRITE": 0.022688404574289996,
+        "EXEC": 0.3402286785427,
+        "L3MISS": 0.042605944839849995,
+        "FREQ": 0.1370745327237,
+        "L2MISS": 0.3239215220986,
+        "PhysIPC%": 124.34439771670002,
+        "L3HIT": 0.8075183826489999,
+        "AFREQ": 1.0318829278816999,
+        "L3MPI": 7.295220164767e-06,
+        "TIME(ticks)": 2120.3426501040003,
+        "L2MPI": 5.471341869394001e-05,
+        "PhysIPC": 4.973476772776,
+        "INSTnom": 0.6803422892226,
+        "READ": 0.3026168205084,
+        "INSTnom%": 17.01349874914,
+        "IPC": 2.4865938362659996
+      },
+      "cluster": [
+        "num-400000",
+        "num-200000",
+        "num-800000",
+        "num-100000",
+        "num-600000",
+        "num-900000",
+        "num-300000",
+        "num-700000",
+        "num-500000",
+        "num-1000000"
       ]
     }
   },
-  "model_type": "LINEAR",
   "CLUSTERED": true,
-  "TRAINED": true,
-  "cluster_info": {
-    "swaptions1": [
-      "num-400000",
-      "num-200000",
-      "num-800000",
-      "num-100000",
-      "num-600000",
-      "num-900000",
-      "num-300000",
-      "num-700000",
-      "num-500000",
-      "num-1000000"
-    ]
-  },
-  "num_of_cluster": 1
+  "machine_id": "liuliu-eel"
 }
