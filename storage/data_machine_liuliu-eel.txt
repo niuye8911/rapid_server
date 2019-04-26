@@ -11,8 +11,26 @@
             "budget": 0,
             "dir": "\/var\/www\/html\/rapid_server\/storage\/apps\/liuliu-eel-swaptions",
             "status": 0
+        },
+        {
+            "id": "svm",
+            "budget": 0,
+            "dir": "\/var\/www\/html\/rapid_server\/storage\/apps\/liuliu-eel-svm",
+            "status": 0
+        },
+        {
+            "id": "nn",
+            "budget": 0,
+            "dir": "\/var\/www\/html\/rapid_server\/storage\/apps\/liuliu-eel-nn",
+            "status": 0
+        },
+        {
+            "id": "facedetect",
+            "budget": 0,
+            "dir": "\/var\/www\/html\/rapid_server\/storage\/apps\/liuliu-eel-facedetect",
+            "status": 0
         }
     ],
-    "lastload": 1556289015,
+    "lastload": 1556292258,
     "compute": null
 }
