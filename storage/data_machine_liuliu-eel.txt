@@ -1,18 +1,18 @@
 {
     "applications": [
         {
-            "id": "swaptions",
-            "budget": 0,
-            "dir": "\/var\/www\/html\/rapid_server\/storage\/apps\/liuliu-eel-swaptions",
-            "status": 0
-        },
-        {
             "id": "ferret",
             "budget": 0,
             "dir": "\/var\/www\/html\/rapid_server\/storage\/apps\/liuliu-eel-ferret",
             "status": 0
+        },
+        {
+            "id": "swaptions",
+            "budget": 0,
+            "dir": "\/var\/www\/html\/rapid_server\/storage\/apps\/liuliu-eel-swaptions",
+            "status": 0
         }
     ],
-    "lastload": 1556133022,
+    "lastload": 1556289015,
     "compute": null
 }

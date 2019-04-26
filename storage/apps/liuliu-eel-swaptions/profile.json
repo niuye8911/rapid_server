@@ -1,13 +1,11 @@
 {
   "name": "swaptions",
-  "num_of_cluster": 1,
+  "machine_id": "liuliu-eel",
   "model_params": {
     "swaptions1": {
-      "diff": 0.046350591066998854,
-      "r2": 0.786967539072952,
-      "model_type": "linear",
-      "file": "/var/www/html/rapid_server/storage/apps/liuliu-eel-swaptions/swaptions1.pkl",
       "mae": 0.05555625793838093,
+      "diff": 0.046350591066998854,
+      "mse": 0.07227530366245617,
       "feature": [
         "AFREQ",
         "EXEC",
@@ -20,36 +18,18 @@
         "PhysIPC%",
         "MEM"
       ],
+      "file": "/var/www/html/rapid_server/storage/apps/liuliu-eel-swaptions/swaptions1.pkl",
       "poly": false,
-      "mse": 0.07227530366245617
+      "model_type": "linear",
+      "r2": 0.786967539072952
     }
   },
   "TRAINED": true,
+  "num_of_cluster": 1,
   "model_type": "LINEAR",
-  "overwrite": true,
+  "CLUSTERED": true,
   "cluster_info": {
     "swaptions1": {
-      "env": {
-        "L2HIT": 0.94454479598,
-        "ACYC": 2326.47635582,
-        "INST": 5772.73307741,
-        "WRITE": 0.022688404574289996,
-        "EXEC": 0.3402286785427,
-        "L3MISS": 0.042605944839849995,
-        "FREQ": 0.1370745327237,
-        "L2MISS": 0.3239215220986,
-        "PhysIPC%": 124.34439771670002,
-        "L3HIT": 0.8075183826489999,
-        "AFREQ": 1.0318829278816999,
-        "L3MPI": 7.295220164767e-06,
-        "TIME(ticks)": 2120.3426501040003,
-        "L2MPI": 5.471341869394001e-05,
-        "PhysIPC": 4.973476772776,
-        "INSTnom": 0.6803422892226,
-        "READ": 0.3026168205084,
-        "INSTnom%": 17.01349874914,
-        "IPC": 2.4865938362659996
-      },
       "cluster": [
         "num-400000",
         "num-200000",
@@ -61,9 +41,29 @@
         "num-700000",
         "num-500000",
         "num-1000000"
-      ]
+      ],
+      "env": {
+        "L2MPI": 5.471341869394001e-05,
+        "FREQ": 0.1370745327237,
+        "IPC": 2.4865938362659996,
+        "ACYC": 2326.47635582,
+        "L3MISS": 0.042605944839849995,
+        "EXEC": 0.3402286785427,
+        "READ": 0.3026168205084,
+        "AFREQ": 1.0318829278816999,
+        "L2MISS": 0.3239215220986,
+        "INSTnom%": 17.01349874914,
+        "L3MPI": 7.295220164767e-06,
+        "L2HIT": 0.94454479598,
+        "INST": 5772.73307741,
+        "L3HIT": 0.8075183826489999,
+        "TIME(ticks)": 2120.3426501040003,
+        "INSTnom": 0.6803422892226,
+        "PhysIPC": 4.973476772776,
+        "PhysIPC%": 124.34439771670002,
+        "WRITE": 0.022688404574289996
+      }
     }
   },
-  "CLUSTERED": true,
-  "machine_id": "liuliu-eel"
+  "overwrite": true
 }
