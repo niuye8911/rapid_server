@@ -68,7 +68,6 @@
 
                 $command = '/usr/bin/python3 /home/liuliu/Research/rapid_m_backend_server/RapidMain.py' . ' --flow INIT --path2app ' . $profileURL . ' --apppfs ' . $bucketsURL . ' --appdata ' . $pmodelURL . ' --dir ' . $this->getDirectory($machineID);
                 echo $command;
-                // god speed
                 $result = exec($command, $output);
                 echo $result;
             }

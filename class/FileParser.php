@@ -18,6 +18,7 @@
         private $updateComputeNeeded; 	// Determines whether or not we need to trigger an update of COMPUTE.
         private $currentCompute;		// The current result of the COMPUTE function.
         private $lastLoad;				// When the file was last accessed.
+        private $result;
 
         public function __construct($machineID)
         {
@@ -25,7 +26,8 @@
             $this->loadApplications();
             $this->updateComputeNeeded = false;
             $this->lastLoad = 0;
-            $this->currentCompute = null;
+            $this->result=null;
+            $this->currentCompute = "storage/data_machine_".$this->machineID . '_result.txt';
             dbg(2, count($this->applications) . " applications loaded");
         }
 
@@ -39,6 +41,16 @@
             return "storage/data_machine_" . $this->machineID . '.txt';
         }
 
+        private function getResultFileName()
+        {
+            $resultURL = $this->currentCompute;
+            if (!file_exists($resultURL)) {
+                file_put_contents($resultURL, '');
+                chmod($resultURL, 0777);
+            }
+            return $resultURL;
+        }
+
         public function getApplicationByID($id)
         {
             foreach ($this->applications as $app) {
@@ -46,37 +58,40 @@
                     return $app;
                 }
             }
-
             return null;
         }
 
-        public function updateApplication($app, $newStatus, $newBudget)
+        public function updateApplication($app_id, $newStatus, $newBudget)
         {
-            $app->setStatus($newStatus);
-            $app->setBudget($newBudget);
-
+            foreach ($this->applications as $app) {
+                if ($app->getID() == $app_id) {
+                    $app->setStatus($newStatus);
+                    $app->setBudget($newBudget);
+                }
+            }
             $this->updateComputeNeeded = true;
         }
 
-        public function getBucket($app)
-        {
-            return 1;
-        }
-
-        private function getCompute()
+        public function getBucket($appID)
         {
             if ($this->updateComputeNeeded) {
                 compute();
             }
+            $this->readResult();
+            return $this->result->getAppResult($appID);
+        }
 
-            return $this->currentCompute;
+        // read the result file
+        private function readResult()
+        {
+					$this->result = Result($this->currentCompute)
         }
 
         // Triggers the call to COMPUTE.
         private function compute()
         {
-            $this->currentCompute = "I set my value!";
-
+            $command = '/usr/bin/python3 /home/liuliu/Research/rapid_m_backend_server/RapidMain.py' . ' --flow GET_BUCKETS --apps ' . $this->getFileName() . '--results '.$this->getResultFileName();
+            $exec_result = exec($command, $output);
             $this->updateComputeNeeded = false; // We no longer need to update compute :)
         }
 

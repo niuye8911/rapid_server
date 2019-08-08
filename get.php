@@ -13,16 +13,20 @@
 
     $machineID 	= $argParser->getMachineID();
     $appID		= $argParser->getApplicationID();
+    $budget = $argParser->getBudget();
 
     $fileParser	= new FileParser($machineID);
 
+    // check if the app has been inited
     $app = $fileParser->getApplicationByID($argParser->getApplicationID());
     if ($app == null) {
         echo "Error";
         die();
     }
 
-    echo $fileParser->getBucket($app);
-
-
+    // update the app's budget
+    $fileParser->updateApplication($app, STATUS_RUNNING, $budget)
     $fileParser->saveToDisk();
+
+    // re-calculate and return the bucket selection
+    echo $fileParser->getBucket($appID);
