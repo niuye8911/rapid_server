@@ -11,9 +11,9 @@
 
     $argParser 	= new ArgumentParser();
 
-    $machineID 	= $argParser->getMachineID();
-    $appID		= $argParser->getApplicationID();
-		echo $machineID . $appID
+    $machineID = $argParser->getMachineID();
+    $appID = $argParser->getApplicationID();
+    echo $machineID;
 
     $fileParser	= new FileParser($machineID);
 
@@ -27,4 +27,4 @@
     $fileParser->updateApplication($app, STATUS_STARTING, $newBudget);
     $fileParser->saveToDisk();
 
-		echo $machineID . $appID
+        echo $machineID;
