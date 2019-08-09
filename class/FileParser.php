@@ -67,6 +67,7 @@
                 if ($app->getID() == $app_id) {
                     $app->setStatus($newStatus);
                     $app->setBudget($newBudget);
+                    $this->applications[$app->getID()] = $app;
                 }
             }
             $this->updateComputeNeeded = true;
