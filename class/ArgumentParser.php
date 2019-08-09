@@ -18,11 +18,11 @@
 
     class ArgumentParser
     {
-        private $machineID 		= null;	// The ID of the machine we are using, used to find the file.
-        private $applicationID 	= null;	// The ID of the application we are targeting.
-        private $buckets		= null;
-        private $p_model		= null;
-        private $budget			= null;
+        private $machineID = null;	// The ID of the machine we are using, used to find the file.
+        private $applicationID = null;	// The ID of the application we are targeting.
+        private $buckets = null;
+        private $p_model = null;
+        private $budget = null;
 
         public function __construct()
         {
