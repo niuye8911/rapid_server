@@ -28,7 +28,7 @@
             $this->lastLoad = 0;
             $this->result=null;
             $this->currentCompute = "storage/data_machine_".$this->machineID . '_result.txt';
-            dbg(2, count($this->applications) . " applications loaded");
+            dbg(3, count($this->applications) . " applications loaded");
         }
 
         public function getApplications()
