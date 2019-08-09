@@ -1,32 +1,29 @@
 <?php
 
-	/*
-	 * This file is the End API Node.
-	 * Joseph A. Boyle (joseph.a.boyle@rutgers.edu)
-	 * Rutgers, The State University of New Jersey
-	 * November 8, 2018
-	 */ 
+    /*
+     * This file is the End API Node.
+     * Joseph A. Boyle (joseph.a.boyle@rutgers.edu)
+     * Rutgers, The State University of New Jersey
+     * November 8, 2018
+     */
 
-	require_once("class/Autoload.php");
-	
-	$argParser 	= new ArgumentParser();
+    require_once("class/Autoload.php");
 
-	$machineID 	= $argParser->getMachineID();
-	$appID		= $argParser->getApplicationID();
+    $argParser 	= new ArgumentParser();
 
-	$fileParser	= new FileParser($machineID);
+    $machineID 	= $argParser->getMachineID();
+    $appID		= $argParser->getApplicationID();
+    $fileParser	= new FileParser($machineID);
 
-	$app = $fileParser->getApplicationByID($argParser->getApplicationID());
-	if($app == null){
-		echo "Error";
-		die();
-	}
+    $app = $fileParser->getApplicationByID($argParser->getApplicationID());
+    if ($app == null) {
+        echo "Error";
+        die();
+    }
 
-	$newBudget = $argParser->getBudget();
-	$fileParser->updateApplication($app, STATUS_ENDED, $newBudget);
+    $newBudget = $argParser->getBudget();
+    $fileParser->updateApplication($app, STATUS_ENDED, $newBudget);
 
-	echo $fileParser->getBucket($app);
+    echo $fileParser->getBucket($app);
 
-	$fileParser->saveToDisk();
-
-?>
+    $fileParser->saveToDisk();

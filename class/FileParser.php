@@ -27,7 +27,7 @@
             $this->updateComputeNeeded = false;
             $this->lastLoad = 0;
             $this->result=null;
-            $this->currentCompute = "storage/data_machine_".$this->machineID . '_result.txt';
+            $this->currentCompute = "/var/www/html/rapid_server/storage/data_machine_".$this->machineID . '_result.txt';
             dbg(3, count($this->applications) . " applications loaded");
         }
 
@@ -38,7 +38,7 @@
 
         private function getFileName()
         {
-            return "storage/data_machine_" . $this->machineID . '.txt';
+            return "/var/www/html/rapid_server/storage/data_machine_" . $this->machineID . '.txt';
         }
 
         private function getResultFileName()
@@ -76,7 +76,7 @@
         public function getBucket($appID)
         {
             if ($this->updateComputeNeeded) {
-                compute();
+                $this->compute();
             }
             $this->readResult();
             return $this->result->getAppResult($appID);
@@ -85,14 +85,14 @@
         // read the result file
         private function readResult()
         {
-            $this->result = Result($this->currentCompute);
+            $this->result = new Result($this->currentCompute);
         }
 
         // Triggers the call to COMPUTE.
         private function compute()
         {
-            $command = '/usr/bin/python3 /home/liuliu/Research/rapid_m_backend_server/RapidMain.py' . ' --flow GET_BUCKETS --apps ' . $this->getFileName() . '--results '.$this->getResultFileName();
-            $exec_result = exec($command, $output);
+            $command = '/usr/bin/python3 /home/liuliu/Research/rapid_m_backend_server/RapidMain.py' . ' --flow GET_BUCKETS --apps ' . $this->getFileName() . ' --result '.$this->getResultFileName();
+            $exec_result = shell_exec($command);
             $this->updateComputeNeeded = false; // We no longer need to update compute :)
         }
 
@@ -119,7 +119,7 @@
                 $this->applications[$app->getID()] = $app;
             }
 
-            $this->lastLoad = $data["lastLoad"];
+            $this->lastLoad = $data["lastload"];
             $this->currentCompute = $data["compute"];
         }
 

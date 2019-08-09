@@ -25,8 +25,9 @@
     }
 
     // update the app's budget
-    $fileParser->updateApplication($app, STATUS_RUNNING, $budget)
+    $fileParser->updateApplication($app, STATUS_RUNNING, $budget);
     $fileParser->saveToDisk();
 
     // re-calculate and return the bucket selection
-    echo $fileParser->getBucket($appID);
+    $bucketSelection = $fileParser->getBucket($appID);
+    echo json_encode($bucketSelection);
