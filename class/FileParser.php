@@ -55,7 +55,6 @@
         {
             foreach ($this->applications as $app) {
                 if ($app->getID() == $id) {
-                    echo "found app";
                     return $app;
                 }
             }

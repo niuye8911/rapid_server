@@ -15,7 +15,6 @@
     $appID = $argParser->getApplicationID();
     $fileParser	= new FileParser($machineID);
     $app = $fileParser->getApplicationByID($argParser->getApplicationID());
-        echo $app;
     if ($app == null) {
         echo "Error";
         die();
@@ -24,4 +23,3 @@
     $newBudget = $argParser->getBudget();
     $fileParser->updateApplication($app, STATUS_STARTING, $newBudget);
     $fileParser->saveToDisk();
-        echo $machineID;
