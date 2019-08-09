@@ -14,7 +14,7 @@
     $machineID = $argParser->getMachineID();
     $appID = $argParser->getApplicationID();
     $fileParser	= new FileParser($machineID);
-
+        echo $argParser->getApplicationID();
     $app = $fileParser->getApplicationByID($argParser->getApplicationID());
         echo $app;
     if ($app == null) {
