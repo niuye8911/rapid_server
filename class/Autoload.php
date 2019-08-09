@@ -19,7 +19,7 @@
      *  2: Verbose
      * 	3: All
      */
-    define("DEBUG", 3);
+    define("DEBUG", 2);
 
     function dbg($level, $msg)
     {
