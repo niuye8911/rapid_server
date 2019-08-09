@@ -23,4 +23,4 @@
     $newBudget = $argParser->getBudget();
     $fileParser->updateApplication($app->getID(), STATUS_STARTING, $newBudget);
     $fileParser->saveToDisk();
-		echo "1"
+        echo "1";
