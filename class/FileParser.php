@@ -84,7 +84,7 @@
         // read the result file
         private function readResult()
         {
-					$this->result = Result($this->currentCompute)
+            $this->result = Result($this->currentCompute);
         }
 
         // Triggers the call to COMPUTE.
