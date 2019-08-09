@@ -21,5 +21,5 @@
     }
 
     $newBudget = $argParser->getBudget();
-    $fileParser->updateApplication($app, STATUS_STARTING, $newBudget);
+    $fileParser->updateApplication($app->getID(), STATUS_STARTING, $newBudget);
     $fileParser->saveToDisk();
