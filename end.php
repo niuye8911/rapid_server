@@ -22,8 +22,9 @@
     }
 
     $newBudget = $argParser->getBudget();
-    $fileParser->updateApplication($app, STATUS_ENDED, $newBudget);
 
-    echo $fileParser->getBucket($app);
+    $fileParser->updateApplication($appID, STATUS_ENDED, $newBudget);
+
+    echo "SUCCESS";
 
     $fileParser->saveToDisk();
