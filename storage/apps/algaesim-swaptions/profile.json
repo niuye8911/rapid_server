@@ -1,0 +1,84 @@
+{
+  "name": "swaptions",
+  "machine_id": 0,
+  "model_params": {
+    "swaptions1": {
+      "file": "/var/www/html/rapid_server/storage/apps/algaesim-swaptions/swaptions1",
+      "mse": 0.02477054650837168,
+      "mae": 0.016492552206495353,
+      "diff": 0.015269725488866825,
+      "r2": 0.5001771779312889,
+      "feature": [
+        "EXEC",
+        "L2MISS",
+        "L2MPI",
+        "INSTnom%",
+        "L3HIT",
+        "FREQ",
+        "L3MPI",
+        "MEM",
+        "IPC",
+        "PhysIPC%",
+        "INST",
+        "L3MISS"
+      ],
+      "poly": false,
+      "model_type": "BR"
+    }
+  },
+  "TRAINED": true,
+  "CLUSTERED": true,
+  "num_of_cluster": 1,
+  "cluster_info": {
+    "swaptions1": {
+      "cluster": [
+        "num-400000",
+        "num-200000",
+        "num-800000",
+        "num-100000",
+        "num-600000",
+        "num-900000",
+        "num-300000",
+        "num-700000",
+        "num-500000",
+        "num-1000000"
+      ],
+      "env": {
+        "ACYC": 2270.4814695100004,
+        "AFREQ": 1.0695020577460002,
+        "EXEC": 0.35442741973709996,
+        "FREQ": 0.13426752908839998,
+        "INST": 5996.997705235999,
+        "INSTnom": 0.7088838289159999,
+        "INSTnom%": 17.72657843139,
+        "IPC": 2.6405056884299993,
+        "L2MISS": 0.056763403091989996,
+        "L2MPI": 9.390731291743e-06,
+        "L3HIT": 0.9331191294979,
+        "L3MISS": 0.0039646130596840004,
+        "L3MPI": 6.588484153200001e-07,
+        "PhysIPC": 5.28173283775,
+        "PhysIPC%": 132.05798965740001,
+        "READ": 0.0024997896956480007,
+        "TIME(ticks)": 2113.8778980839998,
+        "WRITE": 0.00037190885606550007
+      }
+    }
+  },
+  "overwrite": false,
+  "maxes": {
+    "EXEC": 1.30375,
+    "FREQ": 0.523230769231,
+    "INST": 0.5051645658263757,
+    "INSTnom%": 0.651375,
+    "IPC": 2.55,
+    "L2MISS": 3.65,
+    "L2MPI": 0.0006508888888890001,
+    "L3HIT": 0.9983181818179999,
+    "L3MISS": 0.0272057142857,
+    "L3MPI": 3.12714285714e-06,
+    "PhysIPC%": 1.27411764706,
+    "MEM": 0.046294117647000005
+  },
+  "model_type": "LINEAR"
+}
