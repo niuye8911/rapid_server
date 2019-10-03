@@ -61,6 +61,10 @@
             return null;
         }
 
+        // update application will only be called if:
+        // 1) new app comes in
+        // 2) app goes away
+        // 3) app needs to recompute
         public function updateApplication($app_id, $newStatus, $newBudget)
         {
             foreach ($this->applications as $app) {

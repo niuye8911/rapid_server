@@ -13,14 +13,18 @@
 
     $machineID = $argParser->getMachineID();
     $appID = $argParser->getApplicationID();
+    $newBudget = $argParser->getBudget();
     $fileParser	= new FileParser($machineID);
+    # check if app is inited
     $app = $fileParser->getApplicationByID($argParser->getApplicationID());
     if ($app == null) {
         echo "Error";
         die();
     }
-
-    $newBudget = $argParser->getBudget();
+    # update the problem
     $fileParser->updateApplication($app->getID(), STATUS_STARTING, $newBudget);
     $fileParser->saveToDisk();
-        echo "1";
+    # solve the updated problem
+    $bucketSelection = $fileParser->getBucket($appID);
+    # return the result
+    echo json_encode($bucketSelection);
