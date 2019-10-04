@@ -96,6 +96,7 @@
         private function compute()
         {
             $command = '/usr/bin/python3 /home/liuliu/Research/rapid_m_backend_server/RapidMain.py' . ' --flow GET_BUCKETS --apps ' . $this->getFileName() . ' --result '.$this->getResultFileName();
+            echo $command;
             $exec_result = shell_exec($command);
             $this->updateComputeNeeded = false; // We no longer need to update compute :)
         }
